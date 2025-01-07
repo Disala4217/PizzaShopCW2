@@ -1,0 +1,95 @@
+<div class="orders-container">
+  <div class="state-buttons">
+    <button [class.active]="currentView === 'orders'" (click)="switchView('orders')"  >Orders</button>
+    <button [class.active]="currentView === 'pizzas'" (click)="switchView('pizzas')">Pizzas</button>
+  </div>
+
+
+
+    <!-- Orders View -->
+    <div *ngIf="currentView === 'orders'" class="orders-list">
+        <div class="x">
+        <div
+                class="order-block"
+                *ngFor="let order of orders"
+        >
+            <div class="order-summary">
+                <p><strong>Order ID:</strong> {{ order.order_id }}</p>
+                <p><strong>Order Date:</strong> {{ order.order_date }}</p>
+                <p><strong>Total Price:</strong> ${{ order.total_price }}</p>
+                <p><strong>State:</strong> {{ order.state }}</p>
+                <p><strong>Rating:</strong> {{ order.rating }}</p>
+            </div>
+
+            <div class="pizza-details">
+                <h4>Pizzas in this order:</h4>
+                <ul>
+                    <li *ngFor="let pizza of order.pizzaDetails">
+                        {{ pizza.pizzaName }} - ${{ pizza.price }}
+                    </li>
+                </ul>
+            </div>
+            <div class="rating-modal" *ngIf="showRatingModal === order.order_id">
+                <div class="modal-content">
+                    <h3>Rate order number {{ order.order_id }}</h3>
+                    <div class="stars">
+                        <i
+                                *ngFor="let star of [1, 2, 3, 4, 5]"
+                                class="star"
+                                [class.filled]="star <= selectedRating"
+                                (click)="selectRating(star)">
+                            ★
+                        </i>
+                    </div>
+                    <button (click)="submitRating(order.order_id)">Submit</button>
+                    <button (click)="closeModal()">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Rate Button -->
+            <button class="rate-btn" (click)="openRatingModal(order.order_id)">Rate Order</button>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="currentView === 'pizzas'" class="orders-list">
+        <div class="x">
+            <div
+                    class="order-block"
+                    *ngFor="let pizzas of pizza"
+            >
+                <div class="order-summary">
+                    <p><strong>ID :</strong> {{ pizzas.pizza_id }}</p>
+                    <p><strong>Name:</strong> {{ pizzas.pizza_name}}</p>
+                    <p><strong>Crust:</strong> ${{ pizzas.crust }}</p>
+                    <p><strong>Cheese:</strong> {{ pizzas.cheese}}</p>
+                    <p><strong>Sauce:</strong> {{ pizzas.sauce }}</p>
+                    <p><strong>Toppings:</strong> {{ pizzas.toppings}}</p>
+                    <p><strong>Price:</strong> {{ pizzas.price}}</p>
+                    <p><strong>Rating:</strong> {{ pizzas.rating}}</p>
+                    <p><strong>{{ pizzas.pizza_category}}</strong> </p>
+                </div>
+
+                <div class="rating-modal" *ngIf="showRatingModal === pizzas.pizza_id">
+                    <div class="modal-content">
+                        <h3>Rate {{ pizzas.pizza_name }}</h3>
+                        <div class="stars">
+                            <i
+                                    *ngFor="let star of [1, 2, 3, 4, 5]"
+                                    class="star"
+                                    [class.filled]="star <= selectedRating"
+                                    (click)="selectRating(star)">
+                                ★
+                            </i>
+                        </div>
+                        <button (click)="submitPizzaRating(pizzas.pizza_id)">Submit</button>
+                        <button (click)="closeModal()">Cancel</button>
+                    </div>
+                </div>
+                <button class="rate-btn" (click)="openRatingModal(pizzas.pizza_id)">Rate Order</button>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

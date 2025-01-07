@@ -1,0 +1,71 @@
+.profile-container {
+  max-width: 80%;
+  margin-left:10%;
+  margin-right:10%;
+  margin: 2% auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(232, 245, 233, 0.52); /* Light green background */
+}
+
+.profile-card {
+  padding: 20px;
+  background: rgba(232, 245, 233, 0.78); /* Light green background */
+  border-radius: 20px;
+}
+.profile-info order-block,
+.order-info order-block,
+.favorite-pizzas{
+  display:flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+
+}
+
+
+.profile-info,
+.favorite-pizzas,
+.order-info {
+  margin-bottom: 20px;
+  flex: 1 1 auto;
+
+}
+
+.favorite-pizzas .order-block {
+  background-color: #e8f5e9; /* Light green */
+  border: 1px solid #c6f4c8; /* Green border */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  width: 300px; /* Fixed width for blocks */
+  height: 300px;
+  border-radius:20px;
+  padding:30px;
+  margin:10px;
+  flex: 1 1 auto;
+}
+
+.favorite-pizzas .order-block:hover {
+  background-color: #dcedc8; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.state-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.state-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.state-buttons button:hover {
+  background-color: #388e3c; /* Dark green on hover */
+}

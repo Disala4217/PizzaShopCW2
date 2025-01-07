@@ -1,0 +1,74 @@
+<div class="payment-container">
+  <h2>Payment Details</h2>
+
+  <table class="payment-table" *ngIf="paymentDetails.length > 0; else noData">
+    <thead>
+    <tr *ngFor="let detail of paymentDetails">
+      <th>Username</th>
+      <th>Address</th>
+      <th>Order Date</th>
+      <th>Loyalty Points</th>
+      <th>Total Price</th>
+      <th *ngIf="detail.loyaltyDiscount>0">Loyalty Discount</th>
+      <th *ngIf="detail.christmasDiscount>0">Christmas Discount</th>
+      <th *ngIf="detail.newYearDiscount>0">New Year Discount</th>
+      <th>Final Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let detail of paymentDetails">
+      <td>{{ detail.username }}</td>
+      <td>{{ detail.address }}</td>
+      <td>{{ detail.orderDate }}</td>
+      <td>{{ detail.loyaltyPoints }}</td>
+      <td>{{ detail.totalPrice | currency }}</td>
+      <td *ngIf="detail.loyaltyDiscount >0">{{ detail.loyaltyDiscount }}%</td>
+      <td *ngIf="detail.christmasDiscount>0">{{ detail.christmasDiscount }}%</td>
+      <td *ngIf="detail.newYearDiscount >0">{{ detail.newYearDiscount }}%</td>
+      <td>{{ detail.finalPrice | currency }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p>No payment details available.</p>
+  </ng-template>
+  <!-- Loading state -->
+  <div *ngIf="!paymentDetails">
+    <p>Loading payment details...</p>
+  </div>
+
+  <hr /><br>
+
+  <!-- Buttons for selecting payment methods -->
+  <div class="form-group">
+    <button (click)="toggleCreditCard()" class="action-button">Pay With Credit Card</button>
+    <button (click)="toggleDigitalWallet()" class="action-button">Pay with Digital Wallet</button>
+    <button (click)="toggleLoyaltyPoints()" class="action-button">Pay With Loyalty Points</button>
+  </div><br>
+<hr/><br>
+  <!-- Credit Card Payment -->
+  <div *ngIf="showCreditCard" class="payment-method"><br>
+    <h2>Pay With Credit Card</h2><br>
+    <label for="cardNumber">Credit Card Number:</label><br><br>
+    <input id="cardNumber" [(ngModel)]="cardNumber" type="text" class="form-input" placeholder="Enter your card number" /><br><br>
+    <label for="expiry">Expiry Date:</label><br><br>
+    <input id="expiry"  [(ngModel)]="expiry" type="text" class="form-input" placeholder="MM/YY" /><br><br>
+    <button class="action-buttonX" (click)="creditCardPay()">Submit</button>
+  </div>
+
+  <!-- Digital Wallet Payment -->
+  <div *ngIf="showDigitalWallet" class="payment-method"><br>
+    <h2>Pay With Digital Wallet</h2><br>
+    <label for="walletId">Digital Wallet ID:</label><Br><br>
+    <input id="walletId" [(ngModel)]="walletID" type="text" class="form-input" placeholder="Enter your wallet ID" /><br><br>
+    <button class="action-buttonx" (click)="DigitalWalletPay()">Submit</button>
+  </div>
+
+  <!-- Loyalty Points Payment -->
+  <div *ngIf="showLoyaltyPoints"  class="payment-method"><br>
+    <h2>Pay With Loyalty Points</h2><br><br>
+    <p>Your loyalty points will be used for this payment.</p><br><br>
+    <button class="action-buttonX"  (click)="loyaltyPointsPay()">Submit</button>
+  </div>
+</div>

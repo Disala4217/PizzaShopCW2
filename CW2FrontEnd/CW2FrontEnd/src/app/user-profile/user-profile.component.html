@@ -1,0 +1,41 @@
+<!-- User Profile Container -->
+<div class="profile-container orders-container">
+  <h1>User Profile</h1>
+  <div class="profile-card" *ngFor="let user of userDetail">
+    <!-- User Info -->
+    <div class="profile-info order-block">
+      <h3>User Information</h3>
+      <hr>
+      <p><strong>User ID:</strong> {{ user.user_id }}</p>
+      <p><strong>Name:</strong> {{ user.user_name }}</p>
+      <p><strong>Loyalty Points:</strong> {{ user.loyalty_points }}</p>
+      <p><strong>Address:</strong> {{ user.address }}</p>
+    </div>
+<br>
+    <!-- Favorite Pizzas -->
+    <h3>Favorite Pizzas</h3>
+    <hr>
+    <div class="favorite-pizzas x">
+
+      <div class="order-block" *ngFor="let pizza of user.favorite_pizzas_details.split(';')">
+        <div class="pizza-details">
+          <p><strong>Crust:</strong> {{ pizza.split('(Crust: ')[1]?.split(',')[0] }}</p>
+          <p><strong>Sauce:</strong> {{ pizza.split('Sauce: ')[1]?.split(',')[0] }}</p>
+          <p><strong>Cheese:</strong> {{ pizza.split('Cheese: ')[1]?.split(',')[0] }}</p>
+          <p><strong>Toppings:</strong> {{ pizza.split('Toppings: ')[1]?.split('],')[0] }}]</p>
+          <p><strong>Price:</strong> {{ pizza.split('Price: ')[1]?.split(',')[0] }}</p>
+          <p><strong>Rating:</strong> {{ pizza.split('Rating: ')[1]?.split(',')[0] }}</p>
+          <p><strong>Type:</strong> {{ pizza.split('Type: ')[1]?.split(')')[0] }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Orders -->
+    <div class="order-info order-block">
+      <h3>Order Summary</h3>
+      <hr>
+      <p><strong>Total Orders:</strong> {{ user.total_orders }}</p>
+      <p><strong>Total Pizzas Ordered:</strong> {{ user.total_pizzas_ordered }}</p>
+    </div>
+  </div>
+</div>

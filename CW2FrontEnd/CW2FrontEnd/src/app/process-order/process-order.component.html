@@ -1,0 +1,120 @@
+<div class="order-container">
+  <h1>Pizza Ordering System</h1>
+
+  <!-- Dropdown to select a pre-defined pizza -->
+  <div class="form-group">
+    <label for="predefinedPizza">Select a Pizza:</label>
+    <select id="predefinedPizza" [(ngModel)]="selectedPizza">
+      <option *ngFor="let pizza of predefinedPizzas" [ngValue]="pizza">{{ pizza.name }} - Rs. {{ pizza.price }}</option>
+    </select>
+    <button (click)="addSelectedPizzaToOrder()"  class="action-button">Add Pizza</button>
+  </div>
+
+  <hr />
+
+  <!-- Button to open the frame for customizing a pizza -->
+  <div class="form-group">
+    <button (click)="toggleCustomizePizzaFrame()" class="action-button">Customize a Pizza</button>
+  </div>
+
+  <!-- Frame for customizing a pizza -->
+  <div *ngIf="showCustomizeFrame" class="customize-frame">
+    <h2>Customize Your Pizza</h2>
+
+    <!-- Crust Selection -->
+    <div class="form-group">
+      <label>Select Crust Type:</label>
+      <div class="selection-buttons">
+        <button *ngFor="let crust of crustOptions"
+                (click)="selectedCrust = crust"
+                [class.selected]="selectedCrust === crust"
+                class="option-button">
+          {{ crust }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Sauce Selection -->
+    <div class="form-group">
+      <label>Select Sauce Type:</label>
+      <div class="selection-buttons">
+        <button *ngFor="let sauce of sauceOptions"
+                (click)="selectedSauce = sauce"
+                [class.selected]="selectedSauce === sauce"
+                class="option-button">
+          {{ sauce }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Cheese Selection -->
+    <div class="form-group">
+      <label>Select Cheese Type:</label>
+      <div class="selection-buttons">
+        <button *ngFor="let cheese of cheeseOptions"
+                (click)="selectedCheese = cheese"
+                [class.selected]="selectedCheese === cheese"
+                class="option-button">
+          {{ cheese }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Toppings Dropdown and Add Button -->
+    <div class="form-group">
+      <label>Select Toppings:</label>
+      <div class="topping-controls">
+        <select [(ngModel)]="selectedTopping" class="topping-select">
+          <option *ngFor="let topping of toppingsOptions" [ngValue]="topping">
+            {{ topping }}
+          </option>
+        </select>
+        <button class="action-button add-topping-button" (click)="addTopping()">Add Topping</button>
+      </div>
+      <div class="added-toppings">
+        <p><strong>Selected Toppings:</strong></p>
+        <ul>
+          <li *ngFor="let topping of selectedToppings; let i = index">
+            {{ topping }}
+            <button class="remove-topping-button" (click)="removeTopping(i)">Remove</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pizza Name -->
+    <div class="form-group">
+      <label>Enter Pizza Name:</label>
+      <input id="pizzaName" [(ngModel)]="pizzaName" type="text" placeholder="Enter pizza name" />
+    </div>
+
+    <button class="action-button fav-button" (click)="addToFavorites()">Add Pizza to Favorites</button>
+    <button class="action-button" (click)="addCustomPizza()">Add Customized Pizza</button>
+  </div>
+
+  <hr />
+
+  <!-- Display added pizzas -->
+  <div class="pizzas-list">
+    <h2>Your Order</h2>
+    <ul>
+      <li *ngFor="let pizza of orderPizzas">
+        {{ pizza.name }} - Rs. {{ pizza.price }}
+        <button class="remove-topping-button" (click)="removePizza(pizza)">Remove</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Finalizing the order -->
+  <div class="actions">
+    <h3>Total Price: Rs. {{ calculateTotalPrice() }}</h3>
+    <button class="action-button" *ngIf="!isOrderFinalized" (click)="finalizeOrder()">Finalize Order</button>
+  </div>
+
+  <!-- Delivery or Pickup Options -->
+  <div class="delivery-options" *ngIf="isOrderFinalized">
+    <h2>Delivery or Pickup</h2>
+    <button class="action-button" (click)="selectDelivery()">Delivery</button>
+    <button class="action-button" (click)="selectPickup()">Pickup</button>
+  </div>
+</div>

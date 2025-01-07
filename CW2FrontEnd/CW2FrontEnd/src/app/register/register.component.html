@@ -1,0 +1,46 @@
+<div class="form-container">
+    <div class="form-card">
+        <h2 class="form-title">Register</h2>
+        <form #register="ngForm" (ngSubmit)="onSubmit(register.value)">
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        ngModel
+                        class="form-input"
+                        placeholder="Enter your username"
+                        required
+                />
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        ngModel
+                        class="form-input"
+                        placeholder="Enter your password"
+                        required
+                />
+            </div>
+            <div class="form-group">
+                <label for="address" class="form-label">Address</label>
+                <textarea
+                        id="address"
+                        name="address"
+                        ngModel
+                        class="form-input"
+                        rows="4"
+                        placeholder="Enter your address"
+                        required
+                ></textarea>
+            </div>
+
+            <button type="submit" class="form-button" >Register</button>
+
+        </form>
+    </div>
+</div>

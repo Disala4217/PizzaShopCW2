@@ -1,0 +1,48 @@
+
+
+<section class="hero-section">
+  <div class="hero-content">
+    <h1>Welcome to PizzaShop</h1>
+    <p>Your one-stop destination for crafting the perfect pizza! Whether you're craving a classic Margherita or a custom creation, we've got you covered.</p>
+    <button routerLink="/process-order" class="cta-button">Start Customizing Your Pizza</button>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature">
+    <h2>Customizable Pizzas</h2>
+    <p>Choose from a variety of crusts, sauces, and toppings to create your perfect pizza.</p>
+  </div>
+  <div class="feature">
+    <h2>Easy Ordering</h2>
+    <p>Order for pickup or delivery with real-time tracking.</p>
+  </div>
+  <div class="feature">
+    <h2>Loyalty Rewards</h2>
+    <p>Enjoy seasonal specials and loyalty rewards for our valued customers.</p>
+  </div>
+</section>
+<section class="features">
+  <div class="xp"><h2 class="y">Our top picks</h2></div>
+  <div  class="orders-list">
+    <div class="x">
+      <div
+        class="order-block"
+        *ngFor="let pizzas of pizza"
+      >
+        <div class="order-summary">
+          <p><strong>ID :</strong> {{ pizzas.pizza_id }}</p>
+          <p><strong>Name:</strong> {{ pizzas.pizza_name}}</p>
+          <p><strong>Crust:</strong> ${{ pizzas.crust }}</p>
+          <p><strong>Cheese:</strong> {{ pizzas.cheese}}</p>
+          <p><strong>Sauce:</strong> {{ pizzas.sauce }}</p>
+          <p><strong>Toppings:</strong> {{ pizzas.toppings}}</p>
+          <p><strong>Price:</strong> {{ pizzas.price}}</p>
+          <p><strong>Rating:</strong> {{ pizzas.rating}}</p>
+          <p><strong>{{ pizzas.pizza_category}}</strong> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

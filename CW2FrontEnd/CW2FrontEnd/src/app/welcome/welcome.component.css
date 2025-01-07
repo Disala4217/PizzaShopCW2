@@ -1,0 +1,279 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-y: auto;    /* Allow vertical scrolling if necessary */
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+.orders-container {
+  display: flex;
+  flex-wrap:wrap;
+  padding: 20px;
+  max-width: 90%;
+  margin: 2% 5% auto;
+  border: 1px solid #4caf50; /* Green border */
+  border-radius: 8px;
+  background-color: rgba(232, 245, 233, 0.82); /* Light green background */
+}
+
+.state-buttons {
+  display: flex;
+  width:100%;
+  margin-bottom:10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.state-buttons button {
+  display: flex;
+  width:50%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0;
+  background-color: #c8e6c9; /* Light green button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.state-buttons button.active {
+  background-color: #4caf50; /* Green for active buttons */
+  color: white;
+}
+
+.state-buttons button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.state-buttons button:hover:not(:disabled) {
+  background-color: #388e3c; /* Darker green on hover */
+  color: white;
+}
+/* General Flexbox for orders and pizzas lists */
+.orders-list,
+.pizzas-list {
+  display: flex;
+  flex-wrap:wrap;
+  list-style-type: none; /* Removes default list bullets */
+  padding: 0;
+}
+.x{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between; /* Distribute items evenly with space */
+  gap: 10px; /* Space between list items */
+  list-style-type: none; /* Removes default list bullets */
+  padding: 0;
+
+
+}
+.xp{
+  padding-left:45%;
+  background: #F3E5AB;
+  width:100%;
+  border-radius:100px;
+  border:double;
+  border-color:darkred;
+
+}
+
+/* Individual order block styles */
+.order-block {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #a5d6a7; /* Greenish border */
+  border-radius: 8px;
+  background-color: #e8f5e9; /* Light green background */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  flex: 1 1 auto; /* Adjust for responsiveness */
+  width: 400px; /* Set a consistent size */
+  height: 400px; /* Adjusted height for better layout */
+}
+
+.order-block:hover {
+  background-color: #dcedc8; /* Slightly darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+
+
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.1); /* Adjusted opacity for a cleaner look */
+  color: #333; /* Base text color */
+}
+
+/* Dark overlay */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay for better readability */
+  z-index: -1; /* Place it behind the content */
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); /* Slightly lighter background */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 3rem; /* Adjusted size for better balance */
+  color: #A43D3D;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #044b04;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  background-color: #8C3D3D;
+  color: #FFF;
+  border: none;
+  padding: 12px 25px; /* Adjusted padding */
+  font-size: 1rem; /* Adjusted size */
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 500;
+}
+
+.cta-button:hover {
+  background-color: #A43D3D;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 50px 20px;
+}
+
+.feature {
+  background-color: #F3E5AB;
+  padding: 25px; /* Adjusted padding */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: calc(30% - 20px);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: 400;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(39, 38, 38, 0.2);
+}
+
+h2 {
+  color: #A43D3D;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(214, 181, 122, 0.9);
+  color: #FFF;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #710606;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3e5ab; /* Light beige */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a43d3d; /* Darker red */
+  border-radius: 10px;
+  border: 2px solid #f3e5ab; /* Matches track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8c3d3d; /* Slightly darker on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+

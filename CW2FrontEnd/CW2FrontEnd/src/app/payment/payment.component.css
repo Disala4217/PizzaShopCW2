@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Payment Section */
+.payment-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2% 15% 17% 18%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent white for main container */
+  border-radius: 20px; /* Rounded corners for Mac-like card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header Section */
+.payment-container h2 {
+  font-size: 2em;
+  color: #2e7d32; /* Rich green for the heading */
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center; /* Center-align the text */
+  background-color: transparent; /* Remove background */
+}
+
+/* Table with Green Theme */
+.payment-table {
+  display: block;
+  overflow: auto;
+  margin: 20px 0;
+}
+
+.payment-table table {
+  border-collapse: collapse;
+  width: 100%;
+  transform: rotate(-90deg) translateX(-100%); /* Rotate table to make it horizontal */
+  transform-origin: top left;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-table th,
+.payment-table td {
+  padding: 12px 15px;
+  border: 1px solid #a5d6a7; /* Muted green */
+  font-size: 0.9em;
+}
+
+.payment-table thead {
+  background-color: #2e7d32; /* Dark green */
+  color: white;
+  text-transform: uppercase;
+}
+
+.payment-table tbody {
+  background-color: #e8f5e9; /* Light pastel green */
+}
+
+/* Buttons with Mac-like hover effects */
+.form-group {
+  display: flex;
+  flex-wrap: wrap; /* Responsive layout */
+  justify-content: center; /* Center-align the group */
+  gap: 15px; /* Space between buttons */
+  margin: 20px 0;
+  padding:10px;
+  border-radius:30px;
+  background-color: rgba(12, 255, 24, 0.02); /* Transparent background */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Action Button */
+.action-button {
+  padding: 20px 30px;
+  margin:5px;
+  background-color: #43a047; /* Soft green button */
+  border: 2px solid #2e7d32; /* Dark green border */
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded button edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.action-button:hover {
+  background-color: #2e7d32; /* Dark green on hover */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-button {
+    font-size: 0.85em;
+  }
+}
+
+.payment-method {
+  color: #2e7d32;
+  font-weight: bolder;
+  max-width:50%;
+  margin-left: 25%;
+  flex-wrap: wrap; /* Responsive layout */
+  justify-content: center; /* Center-align the group */
+  gap: 15px; /* Space between buttons */
+  padding:10px;
+  border-radius:30px;
+  background-color: rgba(12, 255, 24, 0.02); /* Transparent background */
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.action-buttonx {
+  padding: 20px 30px;
+  margin-left:40%;
+  background-color: #43a047; /* Soft green button */
+  border: 2px solid #2e7d32; /* Dark green border */
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px; /* Rounded button edges */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.action-buttonx:hover {
+  background-color: #2e7d32; /* Dark green on hover */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+/* Input Field Styling */
+.form-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 1px solid #a5d6a7; /* Muted green border */
+  border-radius: 8px; /* Rounded corners for input */
+  font-size: 1em;
+  background-color: #e8f5e9; /* Light pastel green */
+  color: #2e7d32; /* Rich green text */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #43a047; /* Highlight border */
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.5); /* Glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-button {
+    font-size: 0.85em;
+  }
+}

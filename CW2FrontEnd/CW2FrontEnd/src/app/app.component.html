@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PizzaShop</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+
+<body class="background" style="background: url('assets/pizza-background.jpg')">
+<!-- Dark overlay -->
+<div class="background-overlay"></div>
+<nav class="navbar">
+  <img Src="assets/logo.png" width="60" height="60" alt="Logo">
+  <a routerLink="/"  class="nav-link">Home</a>
+  <a routerLink="/pizza-builder" class="nav-link">Make a custom pizza</a>
+  <a routerLink="/process-order" class="nav-link">Make an Order</a>
+  <a routerLink="/feedback" class="nav-link">Orders & Pizzas</a>
+  <a routerLink="/user-profile" class="nav-link">Profile</a>
+  <!-- Conditional rendering for login/logout -->
+  <ng-container *ngIf="isLoggedIn(); else loggedOut">
+    <a (click)="logout()" class="nav-link">Logout</a>
+  </ng-container>
+  <ng-template #loggedOut>
+    <a routerLink="/login" class="nav-link">Login</a>
+  </ng-template>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+<footer class="footer">
+  <p>&copy; 2024 PizzaShop. Made for the Course Work 2.</p>
+  <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<div class="container">
+  <h1>Customize Your Pizza</h1>
+
+  <!-- Crust Selection -->
+  <div class="form-group">
+    <label>Select Crust Type:</label>
+    <div class="selection-buttons">
+      <button *ngFor="let crust of crustOptions"
+              (click)="selectedCrust = crust"
+              [class.selected]="selectedCrust === crust"
+              class="option-button">
+        {{ crust }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Sauce Selection -->
+  <div class="form-group">
+    <label>Select Sauce Type:</label>
+    <div class="selection-buttons">
+      <button *ngFor="let sauce of sauceOptions"
+              (click)="selectedSauce = sauce"
+              [class.selected]="selectedSauce === sauce"
+              class="option-button">
+        {{ sauce }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Cheese Selection -->
+  <div class="form-group">
+    <label>Select Cheese Type:</label>
+    <div class="selection-buttons">
+      <button *ngFor="let cheese of cheeseOptions"
+              (click)="selectedCheese = cheese"
+              [class.selected]="selectedCheese === cheese"
+              class="option-button">
+        {{ cheese }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Toppings Dropdown and Add Button -->
+  <div class="form-group">
+    <label>Select Toppings:</label>
+    <div class="topping-controls">
+      <select [(ngModel)]="selectedTopping" class="topping-select">
+        <option *ngFor="let topping of toppingsOptions" [ngValue]="topping">
+          {{ topping }}
+        </option>
+      </select>
+      <button class="add-topping-button" (click)="addTopping()">Add Topping</button>
+    </div>
+    <div class="added-toppings">
+      <p><strong>Selected Toppings:</strong></p>
+      <ul>
+        <li *ngFor="let topping of selectedToppings; let i = index">
+          {{ topping }}
+          <button class="remove-topping-button" (click)="removeTopping(i)">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Pizza Name -->
+  <div class="form-group">
+    <label>Enter Pizza Name:</label>
+    <input id="pizzaName" [(ngModel)]="pizzaName" type="text" placeholder="Enter pizza name" />
+  </div>
+
+  <!-- Build Pizza Button
+  <button class="build-button"  (click)="buildPizza()">Order this Pizza </button> -->
+  <button class="fav-button"   (click)="AddToFavorites()" >Add Pizza to Favorites</button>
+</div>

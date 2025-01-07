@@ -1,0 +1,192 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container Styling */
+.order-container {
+  width: 100%;
+  max-width: 60%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top:4%;
+  margin-left:20%;
+  margin-right:20%;
+  margin-bottom:5%;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(168, 228, 168, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Input and Select */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Buttons */
+.action-button {
+  padding: 10px 20px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 5px 0;
+  transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  margin:1%;
+}
+
+.action-button:hover {
+  background-color: #1d5f39;
+  transform: scale(1.05);
+}
+
+.fav-button {
+  background-color: #882a2a;
+}
+
+.fav-button:hover {
+  background-color: #5f1d1d;
+}
+
+/* Option Buttons */
+.selection-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-button {
+  padding: 10px 20px;
+  border: 2px solid #2e8b57;
+  border-radius: 8px;
+  background-color: #e7f4ea;
+  color: #2e8b57;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-button:hover {
+  background-color: #2e8b57;
+  color: white;
+  transform: scale(1.05);
+}
+
+.option-button.selected {
+  background-color: #2e8b57;
+  color: white;
+}
+
+/* Topping Controls */
+.topping-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topping-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #2e8b57;
+  flex: 1;
+}
+
+/* Added Toppings */
+.added-toppings {
+  margin-top: 15px;
+}
+
+.remove-topping-button {
+  margin-left: 10px;
+  padding: 5px;
+  border: none;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-topping-button:hover {
+  background-color: #c00000;
+}
+
+/* Actions and Delivery */
+.actions,
+.delivery-options {
+  margin-top: 20px;
+}
+
+/* List */
+.pizzas-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pizzas-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .option-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  .action-button {
+    padding: 8px 15px;
+  }
+}

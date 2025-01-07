@@ -1,0 +1,196 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container Styling */
+.container {
+  width: 100%;
+  max-width: 60%;
+  background-color: rgba(255,255,255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  margin-left:20%;
+  margin-right:20%;
+  margin-top:1%;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #2e8b57;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Selection Buttons */
+.selection-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.option-button {
+  padding: 10px 20px;
+  border: 2px solid #2e8b57;
+  border-radius: 8px;
+  background-color: #e7f4ea;
+  color: #2e8b57;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.option-button:hover {
+  background-color: #2e8b57;
+  color: white;
+  transform: scale(1.05);
+}
+
+.option-button.selected {
+  background-color: #2e8b57;
+  color: white;
+}
+
+/* Topping Controls */
+.topping-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topping-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #2e8b57;
+  flex: 1;
+}
+
+.add-topping-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #2e8b57;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-topping-button:hover {
+  background-color: #1d5f39;
+}
+
+/* Added Toppings */
+.added-toppings {
+  margin-top: 15px;
+}
+
+.remove-topping-button {
+  margin-left: 10px;
+  margin: 1% ;
+  padding: 5px;
+  border: none;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.remove-topping-button:hover {
+  background-color: #c00000;
+}
+
+/* Button Styling */
+.build-button {
+  display:flex;
+  float: right;
+  margin: 1% ;
+  margin-bottom:2%;
+  padding: 10px 20px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.build-button:hover {
+  background-color: #1d5f39;
+}
+.fav-button {
+  display:flex;
+  float: right;
+  margin: 1% ;
+  margin-bottom:2%;
+  padding: 10px 20px;
+  background-color: #882a2a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.fav-button:hover {
+  background-color: #5f1d1d;
+}
+
+.form-group {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(168, 228, 168, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+  opacity: 1; /* Ensure the placeholder is fully visible */
+}
+
